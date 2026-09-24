@@ -258,25 +258,25 @@ The Power BI dashboard contains **4 analytical pages**.
 
 ### 1. Executive Overview
 
-![Executive Overview](powerbi/screenshots/01_executive_overview.png)
+![Executive Overview](./powerbi/01_executive_overview.png)
 
 ---
 
 ### 2. Acquisition & Funnel
 
-![Acquisition & Funnel](powerbi/screenshots/02_acquisition_funnel.png)
+![Acquisition & Funnel](./powerbi/02_acquisition_funnel.png)
 
 ---
 
 ### 3. Campaign Performance
 
-![Campaign Performance](powerbi/screenshots/03_campaign_performance.png)
+![Campaign Performance](./powerbi/03_campaign_performance.png)
 
 ---
 
 ### 4. Customer Economics & Retention
 
-![Customer Economics & Retention](powerbi/screenshots/04_customer_economics_retention.png)
+![Customer Economics & Retention](./powerbi/04_customer_economics_retention.png)
 
 ---
 
