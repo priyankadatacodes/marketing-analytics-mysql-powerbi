@@ -1,4 +1,4 @@
-# Marketing Performance, Customer Acquisition & Lifetime Value Analytics 📊
+# Marketing Performance, Customer Acquisition & Lifetime Value Analytics 
 
 ![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?logo=mysql\&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-Advanced-336791)
