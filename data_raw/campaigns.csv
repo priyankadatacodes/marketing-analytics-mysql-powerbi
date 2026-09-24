@@ -1,0 +1,226 @@
+campaign_id,campaign_name,channel,campaign_type,start_date,end_date
+CAMP0001,Retargeting Blast 2024,Organic Search,Awareness,2024-11-04,12/15/2024
+CAMP0002,Lead Gen Sprint 2024,Display,Awareness,24-04-2024,2024-05-30
+CAMP0003,New Year Push 2024,PAID SEARCH,Retention,2024-07-28,24-10-2024
+CAMP0004,App Install Push 2023,PPC,Retention,2023-05-09,
+CAMP0005,New Year Push 2026,DISPLAY,Retargeting,2026-01-13,03/10/2026
+CAMP0006,Lead Gen Sprint 2023,SEO,Acquisition,26 Jan 2023,2023-03-09
+CAMP0007,Referral Boost 2023,Paid Search,Acquisition,2023-05-19,01-07-2023
+CAMP0008,Brand Awareness 2023,Organic Search,Acquisition,04-05-2023,2023-06-25
+CAMP0009,Holiday Special 2025,Banner,Retention,2025-03-04,21-03-2025
+CAMP0010,Webinar Signup 2024,Referal,Retargeting,11-05-2024,2024-07-08
+CAMP0011,Referral Boost 2025,REFERRAL,Retargeting,29-04-2025,09-06-2025
+CAMP0012,Brand Awareness 2023,referral,Acquisition,2023-06-26,2023-08-07
+CAMP0013,Lead Gen Sprint 2025,Paid Search,Acquisition,24-01-2025,2025-03-07
+CAMP0014,Flash Discount 2026,ORGANIC,Retention,2026-03-25,23-06-2026
+CAMP0015,Referral Boost 2026,INSTAGRAM,Retention,25-03-2026,2026-04-22
+CAMP0016,Summer Sale 2024,Banner,Retargeting,2024-05-18,
+CAMP0017,Referral Boost 2025,Instagram,Awareness,2025-08-02,25-08-2025
+CAMP0018,App Install Push 2025,referral,Acquisition,01 Aug 2025,2025-10-07
+CAMP0019,Holiday Special 2026,ORGANIC,Retargeting,2026-06-26,2026-08-13
+CAMP0020,Flash Discount 2023,PAID SEARCH,Acquisition,30-05-2023,2023-08-26
+CAMP0021,App Install Push 2025,social,Awareness,2025-01-26,2025-02-10
+CAMP0022,App Install Push 2025,Organic,Retention,2025-09-05,2025-11-04
+CAMP0023,Referral Boost 2025,Banner,Awareness,2025-08-28,2025-10-01
+CAMP0024,Product Launch 2023,Display,Acquisition,,2023-11-13
+CAMP0025,Flash Discount 2024,SOCIAL,Retention,26-11-2024,2025-01-06
+CAMP0026,Summer Sale 2024,organic,Retention,2024-12-29,2025-02-10
+CAMP0027,Winback Campaign 2023,Partner,Acquisition,2023-08-21,2023-09-15
+CAMP0028,Brand Awareness 2023,  REFERRAL  ,Acquisition,2023-06-06,2023-08-04
+CAMP0029,Product Launch 2026,Email,Awareness,2026-06-11,09/03/2026
+CAMP0030,Referral Boost 2025,ORGANIC SEARCH,Awareness,24-09-2025,21-11-2025
+CAMP0031,Holiday Special 2023,Email,Retargeting,2023-11-06,2024-02-02
+CAMP0032,Referral Boost 2023,Paid Search,Acquisition,2023-11-07,2023-12-29
+CAMP0033,Brand Awareness 2023,Facebook Ads,Awareness,2023-06-17,2023-07-04
+CAMP0034,Referral Boost 2025,REFERRAL,Awareness,2025-05-08,2025-05-20
+CAMP0035,Flash Discount 2025,Organic Search,Awareness,2025-01-06,03/16/2025
+CAMP0036,Referral Boost 2024,Referral,Retention,02/02/2024,02/23/2024
+CAMP0037,Product Launch 2024,Referal,Acquisition,2024-02-16,2024-05-06
+CAMP0038,Product Launch 2025,Referal,Awareness,03/09/2025,2025-04-18
+CAMP0039,Product Launch 2023,Social,Retargeting,27-06-2023,2023-07-11
+CAMP0040,Brand Awareness 2025,REFERRAL,Acquisition,2025-05-15,
+CAMP0041,Summer Sale 2024,REFERRAL,Acquisition,2024-03-06,07-05-2024
+CAMP0042,Referral Boost 2023,organic,Awareness,2023-07-23,08/08/2023
+CAMP0043,Winback Campaign 2024,E-mail,Retargeting,2024-06-18,2024-08-28
+CAMP0044,Summer Sale 2024,Display,Retargeting,14-04-2024,2024-06-01
+CAMP0045,Brand Awareness 2024,organic,Acquisition,26-03-2024,2024-06-04
+CAMP0046,Product Launch 2026,E-mail,Retention,01/16/2026,2026-04-12
+CAMP0047,Product Launch 2025,paid search,Retention,04/07/2025,04/30/2025
+CAMP0048,Retargeting Blast 2026,social,Acquisition,2026-04-24,07/03/2026
+CAMP0049,Brand Awareness 2026,Email Marketing,Awareness,2026-04-17,2026-05-09
+CAMP0050,Flash Discount 2024,Facebook Ads,Awareness,15-08-2024,10/14/2024
+CAMP0051,Summer Sale 2024,  display  ,Retargeting,30 Jul 2024,2024-10-21
+CAMP0052,Flash Discount 2023,AFFLIATE,Awareness,2023-12-04,2024-02-04
+CAMP0053,Lead Gen Sprint 2024,display,Acquisition,02/18/2024,2024-05-12
+CAMP0054,Brand Awareness 2023,SEO,Retargeting,21 Jun 2023,2023-07-13
+CAMP0055,Webinar Signup 2026,Affiliate,Awareness,2026-01-30,2026-04-06
+CAMP0056,Referral Boost 2023,  referral  ,Acquisition,2023-08-09,2023-09-16
+CAMP0057,New Year Push 2024,Google Ads,Retargeting,2024-10-11,28-12-2024
+CAMP0058,Winback Campaign 2025,display,Acquisition,2025-08-18,2025-09-14
+CAMP0059,App Install Push 2024,  PAID SEARCH  ,Retention,2024-12-05,22-12-2024
+CAMP0060,Referral Boost 2026,Facebook Ads,Awareness,2026-06-02,2026-08-20
+CAMP0061,Flash Discount 2024,  social  ,Acquisition,2024-11-23,2025-01-06
+CAMP0062,Flash Discount 2024,Organic,Retention,2024-06-01,31-07-2024
+CAMP0063,Winback Campaign 2025,Email Marketing,Retention,02-10-2025,12/28/2025
+CAMP0064,Product Launch 2023,Paid Search,Retention,2023-11-02,
+CAMP0065,Retargeting Blast 2023,Facebook Ads,Retargeting,05/06/2023,2023-07-11
+CAMP0066,Brand Awareness 2025,Paid-Search,Awareness,2025-09-21,12/08/2025
+CAMP0067,Flash Discount 2026,Referal,Retention,16-02-2026,2026-03-25
+CAMP0068,Retargeting Blast 2026,Email,Retargeting,09 Feb 2026,2026-04-04
+CAMP0069,Lead Gen Sprint 2025,REFERRAL,Acquisition,2025-01-05,2025-02-01
+CAMP0070,Product Launch 2025,Partner,Retention,2025-01-08,2025-03-18
+CAMP0071,Brand Awareness 2024,Display,Retargeting,25-02-2024,08-03-2024
+CAMP0072,Lead Gen Sprint 2024,Partner,Retargeting,2024-11-18,23 Jan 2025
+CAMP0073,Brand Awareness 2025,Paid Search,Retention,02 Jun 2025,18-08-2025
+CAMP0074,Lead Gen Sprint 2025,SEO,Acquisition,2025-02-26,2025-04-06
+CAMP0075,Retargeting Blast 2023,SEO,Acquisition,2023-05-15,01 Jun 2023
+CAMP0076,Product Launch 2026,PPC,Retargeting,2026-05-22,2026-06-20
+CAMP0077,Flash Discount 2025,EMAIL MARKETING,Awareness,2025-12-11,01/10/2026
+CAMP0078,Referral Boost 2024,Organic,Retargeting,2024-06-27,2024-08-11
+CAMP0079,Holiday Special 2024,EMAIL,Retention,2024-06-02,2024-08-31
+CAMP0080,Summer Sale 2023,  Google Ads  ,Retargeting,26-01-2023,2023-03-26
+CAMP0081,App Install Push 2025,social,Acquisition,2025-02-28,2025-04-18
+CAMP0082,Product Launch 2024,social media,Retargeting,2024-08-08,2024-09-09
+CAMP0083,Winback Campaign 2025,Email,Retention,2025-05-06,2025-07-20
+CAMP0084,App Install Push 2023,Referal,Acquisition,2023-01-30,2023-03-21
+CAMP0085,Webinar Signup 2025,Facebook Ads,Acquisition,,2025-11-15
+CAMP0086,Lead Gen Sprint 2025,  Instagram  ,Retargeting,2025-04-28,2025-05-27
+CAMP0087,Holiday Special 2023,Organic,Retention,2023-06-15,2023-09-01
+CAMP0088,Lead Gen Sprint 2025,Email Marketing,Acquisition,23-10-2025,01/15/2026
+CAMP0089,New Year Push 2026,Paid Search,Awareness,2026-02-04,09-03-2026
+CAMP0090,App Install Push 2024,Partner,Retargeting,21 Mar 2024,2024-05-16
+CAMP0091,Referral Boost 2023,affiliate,Acquisition,17-09-2023,2023-12-16
+CAMP0092,Product Launch 2023,referral,Retention,2023-09-16,11/10/2023
+CAMP0093,Holiday Special 2024,Referral,Awareness,2024-01-13,2024-01-23
+CAMP0094,App Install Push 2026,EMAIL,Acquisition,2026-03-20,2026-05-31
+CAMP0095,Summer Sale 2026,Instagram,Retention,05-04-2026,06/04/2026
+CAMP0096,Lead Gen Sprint 2026,Referral,Retention,,2026-08-05
+CAMP0097,App Install Push 2025,Organic,Retention,01/08/2025,02/26/2025
+CAMP0098,Webinar Signup 2024,E-mail,Retargeting,03-04-2024,2024-04-11
+CAMP0099,App Install Push 2025,REFERRAL,Retention,13-09-2025,2025-11-04
+CAMP0100,Flash Discount 2024,EMAIL,Acquisition,06/26/2024,2024-07-19
+CAMP0101,Summer Sale 2025,social,Retargeting,12/13/2025,2026-03-10
+CAMP0102,Retargeting Blast 2023,Affiliate,Retargeting,03/14/2023,04 Jun 2023
+CAMP0103,Retargeting Blast 2023,Instagram,Retargeting,2023-08-08,11/06/2023
+CAMP0104,App Install Push 2024,email,Awareness,2024-12-08,
+CAMP0105,Referral Boost 2023,display,Acquisition,2023-07-07,10-08-2023
+CAMP0106,New Year Push 2024,social media,Retargeting,2024-12-11,2024-12-20
+CAMP0107,Winback Campaign 2026,social media,Awareness,2026-01-16,2026-03-27
+CAMP0108,Referral Boost 2026,Referral,Awareness,21-05-2026,2026-07-07
+CAMP0109,Winback Campaign 2024,PPC,Acquisition,01/29/2024,2024-02-19
+CAMP0110,App Install Push 2023,SOCIAL,Retention,2023-10-28,2024-01-08
+CAMP0111,Product Launch 2023,Paid-Search,Awareness,02/10/2023,04/25/2023
+CAMP0112,Referral Boost 2023,Paid-Search,Acquisition,2023-12-10,01/15/2024
+CAMP0113,Retargeting Blast 2024,Paid-Search,Retention,,21-02-2024
+CAMP0114,App Install Push 2023,Organic,Awareness,2023-10-08,2023-11-25
+CAMP0115,Summer Sale 2023,E-mail,Awareness,2023-02-01,2023-03-04
+CAMP0116,Flash Discount 2025,affiliate,Acquisition,2025-08-13,16-09-2025
+CAMP0117,Webinar Signup 2023,Social,Awareness,,2023-05-14
+CAMP0118,New Year Push 2025,Partner,Awareness,04/13/2025,07/02/2025
+CAMP0119,Product Launch 2026,AFFILIATE,Retargeting,2026-04-12,2026-06-20
+CAMP0120,Retargeting Blast 2023,Affiliate,Retention,2023-08-28,2023-11-05
+CAMP0121,App Install Push 2026,referral,Retention,20-04-2026,12-06-2026
+CAMP0122,Flash Discount 2024,Affliate,Retargeting,2024-11-12,2024-12-19
+CAMP0123,Winback Campaign 2023,E-mail,Awareness,2023-01-25,2023-02-05
+CAMP0124,Webinar Signup 2026,Organic,Retention,2026-03-30,04/11/2026
+CAMP0125,Flash Discount 2024,EMAIL,Retention,,2024-06-24
+CAMP0126,Winback Campaign 2023,referral,Awareness,14-02-2023,12-04-2023
+CAMP0127,New Year Push 2025,Instagram,Retention,,2025-09-06
+CAMP0128,Flash Discount 2024,Facebook Ads,Awareness,08/02/2024,2024-10-17
+CAMP0129,Summer Sale 2023,Affliate,Awareness,10 Dec 2023,02/16/2024
+CAMP0130,Retargeting Blast 2024,PAID-SEARCH,Retention,2024-03-20,2024-05-04
+CAMP0131,Summer Sale 2024,AFFILIATE,Acquisition,10-01-2024,2024-03-09
+CAMP0132,Summer Sale 2023,Affiliate,Awareness,2023-12-03,2024-01-01
+CAMP0133,Flash Discount 2024,AFFILIATE,Acquisition,23-11-2024,2024-12-18
+CAMP0134,Lead Gen Sprint 2025,paid search,Acquisition,2025-07-12,
+CAMP0135,Referral Boost 2024,Email Marketing,Acquisition,17-02-2024,04/14/2024
+CAMP0136,New Year Push 2023,SOCIAL,Retargeting,11-08-2023,2023-09-09
+CAMP0137,Retargeting Blast 2023,Email,Acquisition,2023-05-25,02 Jul 2023
+CAMP0138,Product Launch 2024,SEO,Acquisition,02/09/2024,2024-02-29
+CAMP0139,Brand Awareness 2024,AFFILIATE,Retargeting,2024-02-01,2024-02-19
+CAMP0140,Retargeting Blast 2025,Affliate,Retention,2025-04-20,2025-06-05
+CAMP0141,Brand Awareness 2024,REFERRAL,Acquisition,12/21/2024,01/27/2025
+CAMP0142,App Install Push 2025,DISPLAY,Acquisition,2025-09-21,11/07/2025
+CAMP0143,Flash Discount 2023,Google Ads,Acquisition,08/08/2023,24-09-2023
+CAMP0144,Brand Awareness 2025,SEO,Retargeting,2025-02-02,2025-04-15
+CAMP0145,Flash Discount 2026,E-mail,Retargeting,06/17/2026,2026-08-09
+CAMP0146,Brand Awareness 2026,Social,Acquisition,2026-04-22,30-05-2026
+CAMP0147,Brand Awareness 2025,paid search,Acquisition,2025-10-08,12/07/2025
+CAMP0148,Flash Discount 2025,SOCIAL,Retargeting,10/28/2025,2025-11-23
+CAMP0149,Winback Campaign 2025,PAID SEARCH,Retention,09/23/2025,08-10-2025
+CAMP0150,Summer Sale 2025,display,Retargeting,22-09-2025,2025-11-27
+CAMP0151,Webinar Signup 2024,Email Marketing,Retention,2024-02-28,2024-05-20
+CAMP0152,New Year Push 2023,DISPLAY,Retargeting,2023-02-02,2023-03-26
+CAMP0153,Holiday Special 2023,Paid Search,Acquisition,07/29/2023,06-10-2023
+CAMP0154,New Year Push 2023,social media,Acquisition,2023-12-27,2024-02-06
+CAMP0155,Product Launch 2024,Affiliate,Acquisition,02/22/2024,16-05-2024
+CAMP0156,Flash Discount 2023,  SOCIAL  ,Retention,07/21/2023,2023-10-10
+CAMP0157,Brand Awareness 2024,SEO,Retention,14-12-2024,02/21/2025
+CAMP0158,Retargeting Blast 2023,REFERRAL,Acquisition,2023-09-24,06-11-2023
+CAMP0159,Retargeting Blast 2023,Display,Retargeting,2023-06-04,17-08-2023
+CAMP0160,Flash Discount 2025,SEO,Retention,01/21/2025,2025-03-29
+CAMP0161,Winback Campaign 2024,affiliate,Awareness,01/23/2024,2024-03-24
+CAMP0162,Holiday Special 2023,DISPLAY,Acquisition,2023-03-25,2023-05-19
+CAMP0163,App Install Push 2025,display,Acquisition,13-05-2025,2025-06-18
+CAMP0164,Webinar Signup 2024,Display Ads,Acquisition,01-12-2024,28 Jan 2025
+CAMP0165,Brand Awareness 2025,Email,Awareness,11/04/2025,2025-11-18
+CAMP0166,Brand Awareness 2025,Organic Search,Acquisition,26-08-2025,2025-10-10
+CAMP0167,Retargeting Blast 2023,Paid-Search,Acquisition,08/20/2023,07-10-2023
+CAMP0168,Webinar Signup 2025,DISPLAY,Acquisition,2025-09-24,14 Nov 2025
+CAMP0169,Referral Boost 2023,ORGANIC,Retargeting,2023-08-02,22-10-2023
+CAMP0170,New Year Push 2025,REFERRAL,Retention,08/14/2025,2025-08-21
+CAMP0171,Brand Awareness 2024,  email  ,Acquisition,2024-06-15,2024-09-01
+CAMP0172,Brand Awareness 2025,E-mail,Awareness,29-01-2025,2025-04-19
+CAMP0173,Referral Boost 2025,social media,Awareness,09/06/2025,2025-10-16
+CAMP0174,Holiday Special 2025,ORGANIC,Retargeting,2025-02-23,2025-04-25
+CAMP0175,App Install Push 2023,EMAIL,Acquisition,2023-03-06,14-05-2023
+CAMP0176,App Install Push 2023,Referral,Retargeting,2023-03-15,04/13/2023
+CAMP0177,Lead Gen Sprint 2023,EMAIL,Awareness,2023-04-23,06/27/2023
+CAMP0178,App Install Push 2024,display,Acquisition,2024-12-03,2025-01-10
+CAMP0179,New Year Push 2023,SOCIAL,Retention,16-08-2023,2023-09-10
+CAMP0180,Referral Boost 2024,Paid-Search,Awareness,2024-05-28,2024-06-13
+CAMP0181,New Year Push 2025,E-mail,Acquisition,2025-05-01,2025-05-09
+CAMP0182,Flash Discount 2026,  EMAIL  ,Awareness,05-06-2026,06/12/2026
+CAMP0183,Brand Awareness 2025,SOCIAL,Awareness,2025-01-25,2025-02-08
+CAMP0184,Winback Campaign 2024,SEO,Retargeting,06-04-2024,27-04-2024
+CAMP0185,Lead Gen Sprint 2025,Partner,Awareness,2025-08-15,20 Oct 2025
+CAMP0186,Webinar Signup 2026,ORGANIC,Acquisition,21 May 2026,2026-06-30
+CAMP0187,Lead Gen Sprint 2024,Referral,Retention,2024-03-10,09-04-2024
+CAMP0188,Webinar Signup 2025,  DISPLAY ADS  ,Awareness,02/14/2025,04/13/2025
+CAMP0189,App Install Push 2024,ORGANIC,Acquisition,2024-10-26,07 Nov 2024
+CAMP0190,Webinar Signup 2024,EMAIL,Retention,2024-10-09,2024-11-03
+CAMP0191,New Year Push 2024,Display,Acquisition,2024-12-28,2025-03-12
+CAMP0192,Flash Discount 2023,Referal,Acquisition,07 Aug 2023,2023-09-10
+CAMP0193,Retargeting Blast 2023,Paid Search,Retention,2023-07-11,08-09-2023
+CAMP0194,New Year Push 2024,Display,Acquisition,2024-06-17,2024-08-23
+CAMP0195,Winback Campaign 2025,PARTNER,Awareness,30-01-2025,03/24/2025
+CAMP0196,Webinar Signup 2025,Organic,Retention,10/03/2025,2025-11-06
+CAMP0197,Holiday Special 2025,SEO,Retention,2025-12-13,2026-01-22
+CAMP0198,App Install Push 2023,display,Retention,2023-05-31,2023-07-31
+CAMP0199,Webinar Signup 2025,AFFILIATE,Acquisition,2025-01-09,2025-02-20
+CAMP0200,Lead Gen Sprint 2025,affiliate,Retargeting,2025-08-23,2025-10-14
+CAMP0201,New Year Push 2026,  display  ,Retention,2026-02-15,2026-04-21
+CAMP0202,Referral Boost 2024,PAID SEARCH,Retention,01-03-2024,08-03-2024
+CAMP0203,Referral Boost 2023,Google Ads,Awareness,2023-10-23,11/29/2023
+CAMP0204,Holiday Special 2026,email,Acquisition,,04/11/2026
+CAMP0205,Retargeting Blast 2023,social,Acquisition,2023-05-11,30-05-2023
+CAMP0206,Referral Boost 2023,PAID SEARCH,Retargeting,2023-07-10,07 Sep 2023
+CAMP0207,Product Launch 2025,Affiliate,Retargeting,18-12-2025,01-02-2026
+CAMP0208,Referral Boost 2025,PPC,Acquisition,2025-08-23,10/24/2025
+CAMP0209,App Install Push 2026,organic,Acquisition,2026-02-19,19-04-2026
+CAMP0210,Holiday Special 2026,Google Ads,Awareness,2026-03-05,2026-04-03
+CAMP0211,Summer Sale 2026,SEO,Retargeting,25-01-2026,2026-02-08
+CAMP0212,Flash Discount 2025,PPC,Retention,2025-06-08,06-07-2025
+CAMP0213,Winback Campaign 2026,social,Acquisition,2026-05-02,23-05-2026
+CAMP0214,New Year Push 2025,Display,Retargeting,2025-08-17,2025-08-27
+CAMP0215,Lead Gen Sprint 2025,SEO,Awareness,18-07-2025,2025-09-15
+CAMP0216,Winback Campaign 2025,PAID SEARCH,Retargeting,22-09-2025,2025-10-28
+CAMP0217,Lead Gen Sprint 2024,social media,Awareness,2024-02-01,03/25/2024
+CAMP0218,Retargeting Blast 2025,referral,Retargeting,2025-12-08,2026-02-07
+CAMP0219,Referral Boost 2023,display,Acquisition,2023-03-27,2023-05-31
+CAMP0220,Holiday Special 2024,SEO,Retargeting,2024-12-24,2025-03-08
+CAMP0022,App Install Push 2025 (v2),Organic,Retention,2025-09-05,2025-11-04
+CAMP0056,Referral Boost 2023 (v2),  referral  ,Acquisition,2023-08-09,2023-09-16
+CAMP0215,Lead Gen Sprint 2025 (v2),SEO,Awareness,18-07-2025,2025-09-15
+CAMP0054,Brand Awareness 2023 (v2),SEO,Retargeting,21 Jun 2023,2023-07-13
+CAMP0027,Winback Campaign 2023 (v2),Partner,Acquisition,2023-08-21,2023-09-15
