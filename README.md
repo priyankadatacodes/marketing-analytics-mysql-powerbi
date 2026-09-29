@@ -5,6 +5,8 @@
 ![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi\&logoColor=black)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
+🌐 **Data Blog:** [bloomindata.in](https://bloomindata.in/)
+
 ## 📌 Project Overview
 
 This project analyzes marketing performance, customer acquisition, campaign effectiveness, and customer lifetime value across **7 marketing channels**.
