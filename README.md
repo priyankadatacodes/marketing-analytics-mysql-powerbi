@@ -9,11 +9,25 @@
 
 ![Executive overview dashboard](powerbi/01_executive_overview.png)
 
-| Marketing spend | Attributed revenue | Blended ROAS | CAC | Revenue per customer | LTV : CAC |
+| Marketing spend | Attributed revenue | Blended ROAS | CAC | Revenue per customer (observed LTV) | LTV : CAC |
 |---:|---:|---:|---:|---:|---:|
 | ≈ ₹230M | ≈ ₹89M | 0.39 | ₹74.8K | ≈ ₹10K | 0.09 – 0.16 (every channel < 1) |
 
-**Navigate:** [Business problem](#business-problem) · [Data quality](#data-quality-assessment) · [SQL analysis](#sql-analysis) · [KPIs](#kpi-framework) · [Data model](#data-model) · [Dashboard](#dashboard) · [Findings](#key-findings) · [Recommendations](#business-recommendations) · [How to run](#how-to-run-this-project) · [Limitations](#limitations-and-validation)
+**Navigate:** [Business problem](#business-problem) · [Data quality](#data-quality-assessment) · [SQL analysis](#sql-analysis) · [KPIs](#kpi-framework) · [Data model](#data-model) · [Dashboard](#dashboard) · [Findings](#key-findings) · [Business impact](#business-impact) · [Recommendations](#business-recommendations) · [Next steps](#what-i-would-do-next) · [How to run](#how-to-run-this-project) · [Limitations](#limitations-and-validation)
+
+---
+
+> **Executive Takeaways**
+>
+> - 🔴 **ROAS 0.39** — every ₹1 spent returned ₹0.39 of attributed revenue (0.36–0.42 in every channel).
+> - 🔴 **LTV:CAC below 1 in all seven channels** — customers have generated ≈ ₹10K of revenue against a ₹74.8K acquisition cost.
+> - 🔴 **99.6% lead-to-customer gap** — the largest funnel loss is downstream of the click, and is uniform across channels.
+> - 🟠 **Affiliate underperforms** — highest CAC, lowest LTV, and the only channel statistically separable from the best.
+> - 🟢 **Measure first, then reallocate** — attribution and LTV definitions must be fixed before budget is moved.
+>
+> *Statistical validation prevented a misleading recommendation: Referral has the highest LTV:CAC, but ANOVA (p = 0.27) and bootstrap confidence intervals show most channel differences sit within sampling variation. Only Affiliate is clearly weaker.*
+
+> **Terminology.** "LTV" in this project means **observed (revenue) LTV** — a customer's cumulative net revenue to date. It is not margin-based and not a forecast of future value (see [KPI Framework](#kpi-framework)).
 
 ---
 
@@ -194,9 +208,9 @@ FROM channel_spend cs JOIN channel_revenue cr ON cs.channel_name = cr.channel_na
 
 **What it shows** — ROAS is 0.36 (Affiliate) to 0.42 (Referral); ROI is negative everywhere. Revenue and spend are aggregated in separate CTEs before joining.
 
-### 3. LTV versus CAC
+### 3. Observed LTV versus CAC
 
-**Business question** — Do customers generate enough revenue to cover what it cost to acquire them?
+**Business question** — Have customers generated enough revenue so far to cover what it cost to acquire them?
 
 ```sql
 -- sql/10_ltv_analysis.sql (Q5), abridged
@@ -247,6 +261,8 @@ The analysis itself was performed in SQL. Python is used for **independent valid
 
    *Result:* ANOVA p = 0.27; chi-square p = 0.21; 95% intervals overlap for six of seven channels — only Affiliate (0.081–0.109) and Referral (0.135–0.182) are separated. *Interpretation:* apart from Affiliate, channel rankings are within sampling variation and should not drive reallocation by themselves.
 
+> **Why this matters.** A ranking-only analysis would have recommended scaling Referral (highest LTV:CAC, 0.157). Testing the differences showed that Referral's interval (0.135–0.182) overlaps those of five other channels, so that recommendation would not have been supported by the data. The same test is what identifies Affiliate as the one channel worth acting on.
+
 ---
 
 ## KPI Framework
@@ -257,8 +273,8 @@ The analysis itself was performed in SQL. Python is used for **independent valid
 | ROAS | Campaign-attributed revenue ÷ spend | Sales returned per ₹1 of spend |
 | ROI | (Revenue − spend) ÷ spend | Net return on a revenue basis (not profit) |
 | CAC | Spend ÷ customers acquired (first-touch) | Cost to win one customer |
-| LTV (revenue to date) | Cumulative net revenue per customer | Value generated so far; not margin-based or forecast |
-| LTV : CAC | Average LTV ÷ CAC | Whether acquisition cost is recovered (3:1 is a common benchmark) |
+| Observed LTV (revenue LTV) | Cumulative net revenue per customer to date | Value generated so far; not margin-based and not a forecast of future value |
+| LTV : CAC | Average observed LTV ÷ CAC | Whether acquisition cost is recovered (3:1 is a common benchmark) |
 | CTR / lead rate / lead-to-customer rate | Clicks ÷ impressions; leads ÷ clicks; customers ÷ leads | Where the funnel loses volume |
 | Retention rate | Customers with any activity or purchase > 30 days after signup ÷ customers | Whether customers return after the first month |
 | Cohort retention (M1–M4) | Share of a signup-month cohort active in month *k* after signup | Shape of engagement over time |
@@ -317,7 +333,7 @@ Four Power BI pages built on the reporting views. Page-by-page notes, including 
 
 ![Customer Economics & Retention](powerbi/04_customer_economics_retention.png)
 
-> Reading note: the **Total** rows of the tables on pages 2 and 3 add up per-row ratio columns (for example CTR 22.87, ROAS 98.12), so those totals and the page-3 row-level ratios should be ignored; the KPI cards and the figures in this README are the reliable values. See [validation notes](docs/validation_notes.md).
+> Reading note: the **Total** rows of the tables on pages 2 and 3 add up per-row ratio columns (for example CTR 22.87, ROAS 98.12), so those totals and the page-3 row-level ratios should be ignored; the KPI cards and the figures in this README are the reliable values. Corrected DAX measures and a validation checklist are in [docs/powerbi_fix_guide.md](docs/powerbi_fix_guide.md); the pages should be re-exported once rebuilt. See also [validation notes](docs/validation_notes.md).
 
 ---
 
@@ -335,13 +351,13 @@ Four Power BI pages built on the reporting views. Page-by-page notes, including 
 
 **Observation** — CAC is ₹74.8K; average revenue per customer is ≈ ₹10K.
 
-**Evidence** — LTV:CAC is 0.094 (Affiliate) to 0.157 (Referral), below 1 in all seven channels. Customers average 5.8 transactions of about ₹1,714. Covering a ₹74.8K CAC would take roughly 44 transactions at that value.
+**Evidence** — LTV:CAC (observed LTV) is 0.094 (Affiliate) to 0.157 (Referral), below 1 in all seven channels. Customers average 5.8 transactions of about ₹1,714. Covering a ₹74.8K CAC would take roughly 44 transactions at that value.
 
-**Business meaning** — Improving retention alone cannot close a gap of this size; acquisition cost, pricing/value per customer or the data's completeness need review first.
+**Business meaning** — Because this is observed revenue to date rather than a forecast, a longer horizon would raise LTV — but improving retention alone cannot be assumed to close a gap of this size; acquisition cost, pricing/value per customer or the data's completeness need review first.
 
 ### Finding 3 — Affiliate is the only clearly weaker channel
 
-**Observation** — Affiliate has the highest CAC (₹86.7K), lowest average LTV (₹8.2K) and lowest LTV:CAC (0.094), taking 12.5% of spend for 10.8% of acquired customers.
+**Observation** — Affiliate has the highest CAC (₹86.7K), lowest average observed LTV (₹8.2K) and lowest LTV:CAC (0.094), taking 12.5% of spend for 10.8% of acquired customers.
 
 **Evidence** — Its bootstrap interval (0.081–0.109) does not overlap Referral's (0.135–0.182). The other five channels (0.123–0.157) overlap one another; ANOVA on revenue per customer p = 0.27.
 
@@ -381,15 +397,51 @@ Four Power BI pages built on the reporting views. Page-by-page notes, including 
 
 ---
 
+## Business Impact
+
+What the recorded data shows for the business, and what each result means for decisions:
+
+| Area | Observed impact | Business implication |
+|---|---|---|
+| Acquisition economics | LTV:CAC below 1 in all seven channels; ROAS 0.39 | The acquisition model does not currently recover its cost on recorded revenue |
+| Affiliate | Highest CAC (₹86.7K), lowest observed LTV (₹8.2K), LTV:CAC 0.094 | Priority channel for review and testing |
+| Funnel | 99.6% of leads do not appear as customers, in every channel | A major downstream conversion or measurement issue, not a channel-selection issue |
+| Attribution | 9.9% of revenue (₹10.2M) has no campaign; channel fields agree for 14.8% of customers | Campaign and channel ROAS cannot be fully trusted yet |
+| Customer value | Top 10% of customers generate 48.6% of revenue | Value-based segmentation matters more than the average customer |
+| Budget structure | Top 5 of 220 campaigns hold 5.47% of spend | No small set of campaigns to cut; simplistic campaign cuts would have little effect |
+
+### Observed impact vs potential impact
+
+No marketing decision was changed or tested as part of this project, so no financial outcome is claimed.
+
+| | Statement |
+|---|---|
+| **Observed impact** | Current recorded economics show that no acquisition channel recovers its acquisition cost, and that the data cannot yet separate most channels from one another. |
+| **Potential impact** | Unifying attribution, reviewing Affiliate spend and locating the lead-to-customer bottleneck could improve acquisition efficiency. The size of any improvement cannot be estimated from this data and would require controlled testing. |
+
+### Priority / impact matrix
+
+| Priority | Issue | Evidence | Recommended action |
+|---|---|---|---|
+| 🔴 High | Measurement and attribution | 14.8% agreement between channel definitions; 9.9% of revenue unattributed | Establish one attribution rule and an order-level campaign key |
+| 🔴 High | Lead-to-customer conversion | 99.6% of leads not converting | Build a stage-level funnel (Lead → MQL → SQL → Opportunity → Customer) |
+| 🟠 Medium | Affiliate economics | Highest CAC, lowest LTV, interval separate from Referral | Test a reduction or restructure against a holdout |
+| 🟠 Medium | Customer value concentration | Top 10% = 48.6% of revenue | Add value-based segmentation |
+| 🟡 Lower | Campaign-level optimisation | Top 5 campaigns = 5.47% of spend; no campaign has ROAS ≥ 1 | Avoid simplistic campaign cuts until attribution is fixed |
+
+**Chain of reasoning used throughout:** business problem → evidence → business impact → recommendation → how it would be measured → expected direction (not a promised outcome).
+
+---
+
 ## Business Recommendations
 
 ### Recommendation 1 — Fix measurement before moving budget
 
-**Problem** — Channel is defined three ways (CRM field, first-touch campaign, campaign on each transaction); the first two agree for 14.8% of customers. LTV is revenue to date; retention is an unbounded flag.
+**Problem** — Channel is defined three ways (CRM field, first-touch campaign, campaign on each transaction); the first two agree for 14.8% of customers. LTV is observed revenue to date (no margin, no forecast); retention is an unbounded flag.
 
 **Evidence** — See Findings 2, 3 and 7 and the [validation notes](docs/validation_notes.md).
 
-**Recommendation** — Agree one customer-to-channel attribution rule, report margin-based LTV with a stated horizon, and define retention at fixed 30/60/90-day windows for eligible customers.
+**Recommendation** — Agree one customer-to-channel attribution rule, report margin-based, forecast LTV alongside observed LTV, with a stated horizon, and define retention at fixed 30/60/90-day windows for eligible customers.
 
 **Expected business direction** — Channel comparisons that finance and marketing can both rely on.
 
@@ -432,6 +484,18 @@ Four Power BI pages built on the reporting views. Page-by-page notes, including 
 **Recommendation** — Add value-decile analysis to the customer page, rebuild table totals as ratio measures keyed by campaign ID, and monitor a small set of reconciled KPIs (spend, attributed vs total revenue, CAC, ROAS) each period.
 
 **Expected business direction** — Dashboards whose totals tie to the SQL source and whose averages are not skewed by a few large customers.
+
+---
+
+## What I Would Do Next
+
+A proposed plan, not completed work. Each step has a measurable check.
+
+| Horizon | Action | How success is measured |
+|---|---|---|
+| **Next 30 days** | Standardise attribution to one customer-to-channel rule; link lead IDs to CRM customers; rebuild the Power BI ratio measures ([guide](docs/powerbi_fix_guide.md)) | Channel fields reconcile; every dashboard total ties to the SQL source |
+| **Next 60 days** | Test an Affiliate reduction against a holdout; build 30/60/90-day retention for eligible customers; add margin-based, forecast LTV | Incremental CAC/ROAS with confidence intervals; retention that is comparable across cohorts |
+| **Next 90 days** | Run controlled budget experiments; evaluate incremental CAC and ROAS; reallocate budget only where results are statistically supported | Pre-agreed decision rule (e.g., interval excludes the baseline) met before any reallocation |
 
 ---
 
