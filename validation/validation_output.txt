@@ -1,0 +1,58 @@
+=== ROW COUNTS (staged) ===
+customers / campaigns / perf / conv / txn / activity      (9985, 220, 25164, 18940, 58000, 72000)
+sum of staged rows (README claims 175,309)                184309
+
+=== HEADLINE KPIs ===
+Total spend (dashboard 230.13M)                           230,140,742
+Attributed revenue (dashboard 89.14M)                     89,166,066
+ALL revenue incl. unattributed                            99,388,931  (unattributed 10,222,865 = 10.3%)
+ROAS attributed / all-revenue                             0.387 / 0.432
+Acquired customers (first-touch, dated)                   3075
+Customers with a 'Customer' stage (incl. undated)         3175
+CAC on 3,075 / on 3,175 (dashboard 74.84K / 08 Q1)        74,843 / 72,485
+Avg revenue-to-date: all customers / first-touch customers9,954 / 9,756
+Median / skew-ish (p99) of customer revenue-to-date       4,075 / 78,913
+LTV:CAC (all-customer LTV / first-touch CAC)  [dash 0.13] 0.133
+Retention flag (dashboard 86.4%)                          86.45%
+
+=== BY FIRST-TOUCH CHANNEL ===
+                   spend  customers        CAC  avg_LTV_ft  LTV:CAC retention_%
+channel                                                                        
+Referral     28123125.39        412  68260.013   10725.312    0.157   83.252427
+Email        30060773.48        428  70235.452    9670.151    0.138   88.317757
+Organic      39207269.68        511  76726.555   10484.891    0.137   87.084149
+Display      28132179.12        415  67788.383    9161.396    0.135   86.506024
+Social       37188413.74        484  76835.566    9910.687    0.129    85.53719
+Paid Search  38565172.19        492  78384.496    9673.870    0.123   86.788618
+Affiliate    28863808.80        333  86678.105    8186.497    0.094   84.984985
+
+=== DATA-QUALITY FACTS ===
+Undated spend rows / spend                                1063 / 9,233,746
+Undated txns / revenue                                    2397 / 4,114,005
+Negative-revenue txns (refund flag) / value               236 / -387,685
+Distinct campaign names vs campaign ids (SQL run: 51; see note)48 vs 220
+   note: 5 duplicated campaign_ids differ only by a '(v2)' name suffix; the SQL ROW_NUMBER tie-break is arbitrary, so the surviving name (48-51 distinct names) can vary
+Share of events dated before signup                       50.0%
+first-touch channel == customers.acquisition_channel      14.8%  (random ≈ 14.3%)
+Top-5 share of spend: by campaign_id / by campaign_name   5.47% / 22.45%
+Campaigns with ROAS >= 1 (of 220) / max ROAS              0 / 0.959
+ANOVA p-value: LTV across first-touch channels            0.273
+Chi-square p: customers/impressions across channels       0.210
+
+=== ADDITIONAL CHECKS ===
+Bootstrap 95% CI of LTV:CAC by first-touch channel (resampling customers; CAC held fixed):
+   Affiliate    0.094  [0.081, 0.109]
+   Display      0.135  [0.117, 0.154]
+   Email        0.138  [0.118, 0.160]
+   Organic      0.137  [0.119, 0.155]
+   Paid Search  0.123  [0.107, 0.142]
+   Referral     0.157  [0.135, 0.182]
+   Social       0.129  [0.112, 0.147]
+ROAS by campaign type                                     {'Acquisition': np.float64(0.375), 'Awareness': np.float64(0.435), 'Retargeting': np.float64(0.368), 'Retention': np.float64(0.383)}
+Top 10% of customers' share of revenue-to-date            48.6%
+Months with monthly ROAS >= 1 (of 43)                     ['2023-01', '2023-02', '2025-03', '2026-07']
+Monthly ROAS min / median / max                           0.19 / 0.41 / 5.61
+Avg revenue per transaction / transactions per customer   1,714 / 5.81
+Campaign spend: min / median / max                        433,765 / 941,721 / 2,825,157
+Unattributed txns (no campaign_id)                        5740 (9.9%)
+Funnel: CTR / click->lead / lead->customer                3.27% / 11.72% / 0.40%

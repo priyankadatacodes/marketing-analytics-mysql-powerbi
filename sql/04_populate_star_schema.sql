@@ -1,6 +1,7 @@
 -- ============================================================================
 -- 04_populate_star_schema.sql
 -- ============================================================================
+-- MySQL 8 variable. (On MariaDB the equivalent is: SET SESSION max_recursive_iterations = 2000;)
 SET SESSION cte_max_recursion_depth = 2000;
 USE marketing_analytics;
 
