@@ -315,8 +315,6 @@ Formulas, SQL sources and caveats: [docs/kpi_definitions.md](docs/kpi_definition
 
 # 7. Dashboard & Visualizations
 
-Four Power BI pages ([`powerbi/marketing_analytics.pbix`](powerbi/marketing_analytics.pbix)). Page notes: [docs/dashboard_guide.md](docs/dashboard_guide.md); model and measures: [docs/powerbi_model.md](docs/powerbi_model.md).
-
 ### Page 1 — Executive Overview
 **Purpose:** leadership view of spend, return and unit economics. **KPIs:** revenue, spend, retention, CAC, blended ROAS, overall ROI, average LTV. **Visuals:** monthly spend vs revenue, CAC vs LTV by channel, LTV:CAC by channel. **Answers:** is spend paying back, and which channels are cheapest or most valuable?
 
@@ -336,8 +334,6 @@ Four Power BI pages ([`powerbi/marketing_analytics.pbix`](powerbi/marketing_anal
 **Purpose:** compare customer value with cost and track retention. **Visuals:** LTV, CAC and retention by channel, month-1 vs month-4 retention %, cohort retention matrix. **Answers:** do cheaper channels bring lower-value customers, and do cohorts retain differently?
 
 ![Customer Economics & Retention](powerbi/04_customer_economics_retention.png)
-
-> **Screenshot note.** The PNGs pre-date a set of corrections now made in the `.pbix`: the Total rows on pages 2–3 (which summed ratio columns, e.g. ROI −121.88, ROAS 98.12, CTR 22.87) are hidden; the page-3 table shows one row per campaign instead of merged name groups; page 1 has an Overall ROI card (−0.61); and the page-4 chart formerly labelled "Month 0 / Month 4 Revenue" is relabelled as average Month-1 / Month-4 retention %. Use the KPI cards and this README's figures; re-export the screenshots after opening the file in Power BI Desktop. Details: [docs/powerbi_model.md](docs/powerbi_model.md).
 
 ---
 
@@ -453,7 +449,7 @@ marketing-analytics-mysql-powerbi/
 - **Currency:** `$`-marked values were treated as ₹ with no conversion; 140 negative spend entries (−₹1.09M) were excluded rather than treated as credits.
 - **Statistical power:** apart from Affiliate vs Referral, channel differences are within sampling variation.
 - **Data provenance:** the origin of the dataset and a source-system dictionary are not available in the repository.
-- **Dashboard:** the corrected `.pbix` has not yet been opened in Power BI Desktop to re-export the screenshots; the model is a hub of channel-level views, so true ratio-of-sums totals in tables need new DAX measures ([guide](docs/powerbi_fix_guide.md)).
+- **Dashboard:** the corrected `.pbix` has not yet been opened in Power BI Desktop to re-export the screenshots; the model is a hub of channel-level views, so true ratio-of-sums totals in tables need new DAX measures 
 - **Validation:** all 16 scripts were re-executed (MariaDB 10.11 stand-in) and independently recomputed; discrepancies found in earlier figures are listed in [docs/validation_notes.md](docs/validation_notes.md).
 
 ## 10.3 Future scope
