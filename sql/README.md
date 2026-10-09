@@ -19,7 +19,7 @@ in one database (`marketing_analytics`). Each script is self-contained and start
 | 11 | `11_retention_analysis.sql` | Analysis | 30-day post-signup retention flag, repeat customers, 90-day revenue split |
 | 12 | `12_cohort_analysis.sql` | Analysis | M0–M4 cohort activity and revenue matrices |
 | 13 | `13_advanced_analysis.sql` | Analysis | Running totals, top-5 spend concentration, NTILE/PERCENT_RANK, multi-criteria screens |
-| 14 | `14_create_views.sql` | Reporting | 3 materialised tables (first-touch, LTV, retention) and 10 views for Power BI |
+| 14 | `14_create_views.sql` | Reporting | 3 materialised tables (first-touch, LTV, retention) and 11 views for Power BI, including `vw_kpi_summary` (portfolio-level ROAS/ROI/CAC computed as ratios of sums) |
 | 15 | `15_stored_procedures.sql` | Reporting | `sp_refresh_materialized_tables` and 3 parameterised read procedures |
 
 Portability notes

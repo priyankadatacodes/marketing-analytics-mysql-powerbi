@@ -6,7 +6,9 @@ They let a reader inspect the key outputs without a database.
 
 | File | Source view | Grain | Rows |
 |---|---|---|---:|
+| `kpi_summary.csv` | `vw_kpi_summary` | portfolio (1 row) | 1 |
 | `channel_performance.csv` | `vw_channel_performance` | channel | 7 |
+| `campaign_performance.csv` | `vw_campaign_performance` | campaign (unique `campaign_id`) | 220 |
 | `funnel_by_channel.csv` | `vw_funnel_performance` | channel | 7 |
 | `monthly_spend_revenue_roas.csv` | `vw_monthly_marketing_performance` + `vw_monthly_revenue` | calendar month (dated rows only) | 43 |
 | `cohort_retention.csv` | `vw_cohort_retention` | signup month | 44 |

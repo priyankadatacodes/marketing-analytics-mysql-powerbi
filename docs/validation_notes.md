@@ -31,5 +31,8 @@
 
 ‡ computed in `validation/verify_kpis.py` or the independent check; not produced by the SQL scripts.
 
-## 4. Suggested next fixes (not applied)
+## 4. ROI correction (applied)
+The page-3 Total row showed ROI −121.88 because Power BI summed the 220 per-campaign ROI values. Portfolio ROI is (Σ attributed revenue − Σ spend) ÷ Σ spend = **−0.6126** (−0.5681 including unattributed revenue). `sql/14_create_views.sql` now exposes `campaign_id` in `vw_campaign_performance` (one unique row per campaign) and adds `vw_kpi_summary` with ratio-of-sums totals; on all 220 rows ROI = ROAS − 1 holds exactly. The Power BI pages themselves still need to be rebuilt on these objects (see `docs/powerbi_fix_guide.md`).
+
+## 5. Suggested next fixes (not applied)
 Group by `campaign_id` instead of `campaign_name` in scripts 06, 07, 09, 10 and 13; use one CAC denominator; standardise on a single channel definition; rebuild the Power BI tables with ratio measures; define retention on eligible customers within fixed windows; add a deterministic tie-break to the campaign de-duplication; commit the `.pbix`.

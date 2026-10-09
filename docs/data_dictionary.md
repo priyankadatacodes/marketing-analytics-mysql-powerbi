@@ -60,7 +60,8 @@ Typed copies of the raw tables: `DATE` for all date fields, `INT` for impression
 | `tbl_customer_ltv` | table | 9,985 | Revenue-to-date per customer |
 | `tbl_customer_retention` | table | 9,985 | 30-day post-signup retention flag |
 | `vw_channel_performance` | view | 7 | Spend, revenue, customers, CAC, LTV, LTV:CAC, ROAS, ROI, retention by channel |
-| `vw_campaign_performance` | view | 220 | Same measures by campaign |
+| `vw_campaign_performance` | view | 220 | Same measures by campaign (one row per `campaign_id`) |
+| `vw_kpi_summary` | view | 1 | Portfolio totals: spend, attributed and total revenue, customers, CAC, ROAS, ROI (ratio of sums) |
 | `vw_funnel_performance` | view | 7 | Impressions → clicks → leads → customers by channel |
 | `vw_monthly_marketing_performance`, `vw_monthly_revenue` | views | 43 / 44 | Monthly spend/traffic and revenue |
 | `vw_customer_economics`, `vw_channel_ltv_cac`, `vw_retention` | views | — | Customer-level and channel-level economics |

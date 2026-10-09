@@ -206,7 +206,7 @@ SELECT cs.channel_name,
 FROM channel_spend cs JOIN channel_revenue cr ON cs.channel_name = cr.channel_name;
 ```
 
-**What it shows** — ROAS is 0.36 (Affiliate) to 0.42 (Referral); ROI is negative everywhere. Revenue and spend are aggregated in separate CTEs before joining.
+**What it shows** — ROAS is 0.36 (Affiliate) to 0.42 (Referral); ROI is −0.58 to −0.64 by channel and **−0.61 for the portfolio** (`vw_kpi_summary`). Revenue and spend are aggregated in separate CTEs before joining, and portfolio ROI is a ratio of sums: adding the 220 campaign ROIs would give a meaningless −121.86.
 
 ### 3. Observed LTV versus CAC
 
@@ -271,7 +271,7 @@ The analysis itself was performed in SQL. Python is used for **independent valid
 |---|---|---|
 | Marketing spend | Sum of daily campaign spend (negative entries excluded) | Total investment under evaluation |
 | ROAS | Campaign-attributed revenue ÷ spend | Sales returned per ₹1 of spend |
-| ROI | (Revenue − spend) ÷ spend | Net return on a revenue basis (not profit) |
+| ROI | (Attributed revenue − spend) ÷ spend = ROAS − 1; **−0.61 for the portfolio**, calculated from total spend and total revenue (never by adding per-campaign ROI) | Net return on a revenue basis (not profit; no margin data exists) |
 | CAC | Spend ÷ customers acquired (first-touch) | Cost to win one customer |
 | Observed LTV (revenue LTV) | Cumulative net revenue per customer to date | Value generated so far; not margin-based and not a forecast of future value |
 | LTV : CAC | Average observed LTV ÷ CAC | Whether acquisition cost is recovered (3:1 is a common benchmark) |
@@ -333,7 +333,7 @@ Four Power BI pages built on the reporting views. Page-by-page notes, including 
 
 ![Customer Economics & Retention](powerbi/04_customer_economics_retention.png)
 
-> Reading note: the **Total** rows of the tables on pages 2 and 3 add up per-row ratio columns (for example CTR 22.87, ROAS 98.12), so those totals and the page-3 row-level ratios should be ignored; the KPI cards and the figures in this README are the reliable values. Corrected DAX measures and a validation checklist are in [docs/powerbi_fix_guide.md](docs/powerbi_fix_guide.md); the pages should be re-exported once rebuilt. See also [validation notes](docs/validation_notes.md).
+> Reading note: the **Total** rows of the tables on pages 2 and 3 add up per-row ratio columns (for example CTR 22.87, ROAS 98.12), so those totals (for example ROI −121.88, which should be −0.61) and the page-3 row-level ratios should be ignored; the KPI cards and the figures in this README are the reliable values. Corrected DAX measures and a validation checklist are in [docs/powerbi_fix_guide.md](docs/powerbi_fix_guide.md); the pages should be re-exported once rebuilt. See also [validation notes](docs/validation_notes.md).
 
 ---
 

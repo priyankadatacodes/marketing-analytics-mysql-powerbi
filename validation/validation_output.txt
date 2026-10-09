@@ -7,6 +7,7 @@ Total spend (dashboard 230.13M)                           230,140,742
 Attributed revenue (dashboard 89.14M)                     89,166,066
 ALL revenue incl. unattributed                            99,388,931  (unattributed 10,222,865 = 10.3%)
 ROAS attributed / all-revenue                             0.387 / 0.432
+ROI = (rev - spend)/spend, attributed / all-revenue       -0.6126 / -0.5681
 Acquired customers (first-touch, dated)                   3075
 Customers with a 'Customer' stage (incl. undated)         3175
 CAC on 3,075 / on 3,175 (dashboard 74.84K / 08 Q1)        74,843 / 72,485

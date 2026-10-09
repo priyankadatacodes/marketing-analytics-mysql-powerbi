@@ -9,7 +9,7 @@
 
 ## Fix
 1. Import the **additive** columns (spend, revenue, impressions, clicks, leads, customer counts) and compute every ratio as a **measure**. Hide the pre-computed ratio columns from the report view.
-2. Use `campaign_id` (unique) as the table row key; show `campaign_name` as a secondary label.
+2. Use `campaign_id` (unique; now exposed by `vw_campaign_performance`) as the table row key; show `campaign_name` as a secondary label.
 3. Use the measures below (table and column names assume the SQL object names; adjust to the model).
 
 ```DAX
@@ -19,7 +19,7 @@ Attributed Revenue = CALCULATE ( SUM ( fact_customer_revenue[revenue] ),
 Customers Acquired = DISTINCTCOUNT ( tbl_customer_first_touch[customer_key] )
 
 ROAS  = DIVIDE ( [Attributed Revenue], [Total Spend] )
-ROI   = [ROAS] - 1
+ROI   = DIVIDE ( [Attributed Revenue] - [Total Spend], [Total Spend] )   -- equals [ROAS] - 1
 CAC   = DIVIDE ( [Total Spend], [Customers Acquired] )
 
 Impressions = SUM ( fact_campaign_performance[impressions] )
@@ -42,7 +42,8 @@ Model notes: relate `tbl_customer_first_touch[channel_key]` / `[campaign_key]` a
 | Spend card | ₹230,140,742 (screenshot shows ₹230,128,289 — reconcile) |
 | Attributed revenue card | ₹89,166,066 (screenshot ₹89,140,344) |
 | ROAS (total row and card) | 0.387 |
-| ROI = ROAS − 1 | holds on every row and the total |
+| ROI (card and Total row) | −0.6126 (not −121.88); `vw_kpi_summary.roi` |
+| ROI = ROAS − 1 | holds on every row and the total (verified on all 220 rows of `vw_campaign_performance`) |
 | CAC (total row) | ₹74,843 |
 | CTR / lead rate / lead-to-customer / overall conversion (total row) | 3.27% / 11.72% / 0.40% / 0.0015% |
 | Σ channel customers | 3,075 |
