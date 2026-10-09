@@ -124,7 +124,7 @@ Net effect: 910 of 185,219 rows (0.5%) removed; other defects were nulled or fla
 Python was not part of the original cleaning workflow. [`validation/verify_kpis.py`](validation/verify_kpis.py) re-implements the cleaning rules and KPI logic with pandas as an independent check (see [Python Analysis](#python-analysis)).
 
 ### BI preparation
-Power BI reads the reporting views from `sql/14_create_views.sql`. The Power BI data model, relationships, calculated columns and DAX measures are **not available in the repository** (the `.pbix` file is not included).
+Power BI imports the reporting views from `sql/14_create_views.sql` (`powerbi/marketing_analytics.pbix`). The model has 12 tables, 10 relationships, 15 DAX measures (blended ROAS, overall ROI, CAC, average LTV, LTV:CAC, retention rate, monthly spend/revenue) and one calculated column (`Is Top 5 Campaign`); all are documented in [docs/powerbi_model.md](docs/powerbi_model.md). The model is a hub of channel-level tables rather than a star over the SQL facts, so ratios cannot be recomputed from facts inside Power BI.
 
 ---
 
@@ -333,7 +333,7 @@ Four Power BI pages built on the reporting views. Page-by-page notes, including 
 
 ![Customer Economics & Retention](powerbi/04_customer_economics_retention.png)
 
-> Reading note: the **Total** rows of the tables on pages 2 and 3 add up per-row ratio columns (for example CTR 22.87, ROAS 98.12), so those totals (for example ROI −121.88, which should be −0.61) and the page-3 row-level ratios should be ignored; the KPI cards and the figures in this README are the reliable values. Corrected DAX measures and a validation checklist are in [docs/powerbi_fix_guide.md](docs/powerbi_fix_guide.md); the pages should be re-exported once rebuilt. See also [validation notes](docs/validation_notes.md).
+> Reading note: the **Total** rows of the tables on pages 2 and 3 add up per-row ratio columns (for example CTR 22.87, ROAS 98.12), so those totals (for example ROI −121.88, which should be −0.61) and the page-3 row-level ratios should be ignored. The `.pbix` has been corrected (Total rows hidden, one row per campaign on page 3, ROI card added) but the PNG screenshots have not yet been re-exported; the KPI cards and the figures in this README are the reliable values. Corrected DAX measures and a validation checklist are in [docs/powerbi_fix_guide.md](docs/powerbi_fix_guide.md); the pages should be re-exported once rebuilt. See also [validation notes](docs/validation_notes.md).
 
 ---
 
@@ -501,7 +501,7 @@ A proposed plan, not completed work. Each step has a measurable check.
 
 ## Limitations and Validation
 
-The pipeline was re-executed end to end and independently recomputed in Python; the results above reproduce. Items that qualify the conclusions — attribution quality, unreliable signup dates, the unconverted-currency assumption, the summed-ratio totals in two dashboard tables, and README figures that were corrected — are listed in [docs/validation_notes.md](docs/validation_notes.md). Notably, the `.pbix` file, DAX measures, a source-system dictionary and the origin of the data are **not available in the repository**.
+The pipeline was re-executed end to end and independently recomputed in Python; the results above reproduce. Items that qualify the conclusions — attribution quality, unreliable signup dates, the unconverted-currency assumption, the summed-ratio totals in two dashboard tables, and README figures that were corrected — are listed in [docs/validation_notes.md](docs/validation_notes.md). Notably, a source-system dictionary and the origin of the data are **not available in the repository**; the corrected `.pbix` has not yet been opened in Power BI Desktop to re-export the screenshots.
 
 ---
 
@@ -539,7 +539,7 @@ marketing-analytics-mysql-powerbi/
 │   ├── 06_acquisition_analysis.sql … 13_advanced_analysis.sql
 │   ├── 14_create_views.sql
 │   └── 15_stored_procedures.sql
-├── powerbi/                      Dashboard screenshots (4 pages); .pbix not included
+├── powerbi/                      Dashboard file (marketing_analytics.pbix) and 4 page screenshots
 ├── results/                      CSV exports of key reporting views from a full run
 ├── validation/                   verify_kpis.py + saved output (independent check)
 └── docs/                         Data dictionary, data model, quality log, KPI definitions,
@@ -574,7 +574,7 @@ marketing-analytics-mysql-powerbi/
    pip install -r requirements.txt
    python validation/verify_kpis.py
    ```
-6. **Dashboard.** The `.pbix` is not in the repository. To rebuild, connect Power BI Desktop to the `marketing_analytics` database and import the `vw_*` views (see [docs/dashboard_guide.md](docs/dashboard_guide.md)); the four screenshots in `powerbi/` show the intended report.
+6. **Dashboard.** Open `powerbi/marketing_analytics.pbix` in Power BI Desktop (it holds an imported snapshot of the views). To refresh from your own database, point the data source at the `marketing_analytics` MySQL database. Model and report changes are documented in [docs/powerbi_model.md](docs/powerbi_model.md).
 
 ---
 

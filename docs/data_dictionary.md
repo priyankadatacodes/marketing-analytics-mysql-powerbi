@@ -68,4 +68,4 @@ Typed copies of the raw tables: `DATE` for all date fields, `INT` for impression
 | `vw_cohort_retention`, `vw_channel_cohort_performance` | views | 44 / — | Signup-month cohort activity (M1–M4) |
 
 ## 4. Not available in the repository
-Power BI model (tables, relationships, calculated columns, DAX measures, Power Query steps) — the `.pbix` file is not in the repository. A formal source-system data dictionary is also not available; the definitions above are derived from the files and SQL.
+A formal source-system data dictionary is not available; the definitions above are derived from the files and SQL. The Power BI semantic model is documented in [powerbi_model.md](powerbi_model.md); no Power Query/M steps are stored in the `.pbix`.

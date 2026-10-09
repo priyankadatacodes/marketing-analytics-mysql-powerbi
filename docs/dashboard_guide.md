@@ -1,6 +1,6 @@
 # Dashboard Guide (Power BI, 4 pages)
 
-The report consumes the reporting views from `sql/14_create_views.sql` (the displayed figures reproduce `vw_funnel_performance`, `vw_channel_performance` and `vw_campaign_performance`). The `.pbix` file is **not available in the repository**, so measures, relationships and Power Query steps cannot be documented; this guide describes the four exported screenshots.
+The report consumes the reporting views from `sql/14_create_views.sql` (the displayed figures reproduce `vw_funnel_performance`, `vw_channel_performance` and `vw_campaign_performance`). The report file is `powerbi/marketing_analytics.pbix`; its model, measures and the corrections made to it are documented in [powerbi_model.md](powerbi_model.md). **This guide describes the four exported screenshots, which pre-date those corrections** (Total rows on pages 2–3 are hidden in the corrected file, page 3 shows one row per campaign, page 1 has an Overall ROI card, and the page-4 chart is relabelled).
 
 All pages share a header, a left-hand page navigation panel and a consistent pink/magenta palette.
 

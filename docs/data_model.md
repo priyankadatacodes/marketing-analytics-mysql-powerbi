@@ -47,4 +47,4 @@ erDiagram
 - `campaign_name` is not unique (220 campaigns, roughly 48–51 distinct names); always use `campaign_id` / `campaign_key`.
 - `fact_marketing_spend` and `fact_campaign_performance` are loaded from the same source rows at the same grain; they could be a single fact table.
 - Customer attributes are overwritten, not versioned (no slowly-changing-dimension history).
-- Power BI relationships and cardinality: **Not available in repository** (the `.pbix` is absent).
+- Power BI relationships and cardinality are documented in [powerbi_model.md](powerbi_model.md): the report model is a hub of channel-level views, not this star schema.

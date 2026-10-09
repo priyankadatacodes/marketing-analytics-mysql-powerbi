@@ -16,7 +16,7 @@
 | 5 | Funnel script vs dashboard | Dashboard funnel uses the views | `07_funnel_analysis.sql` excludes undated rows (190.3M impressions) and counts distinct `Customer`-stage customers per channel across all campaigns (3,175 overall, 3,693 summed across channels because a customer can appear in several), so its outputs differ from the dashboard (198.8M impressions, 3,075 customers) | Dashboard/view definitions used |
 | 6 | Top-5 campaign spend share | 5.47% | 5.47% by campaign id; `13` Q1 groups by `campaign_name` and returns 22.1% | 5.47% used |
 | 7 | "Channel rankings changed" (Display #1→#4, Social #4→#1, Email #7→#2) | README §6.4 | No SQL script in the repository produces monthly channel ranks | Claim omitted — source not available in repository |
-| 8 | Power BI file | README lists `powerbi/marketing_analytics.pbix` and a `screenshots/` subfolder | Neither exists; screenshots sit directly in `powerbi/` | Structure documented as it exists |
+| 8 | Power BI file | README listed `powerbi/marketing_analytics.pbix` and a `screenshots/` subfolder | The file was missing from the repository and has now been added (corrected, see `docs/powerbi_model.md`); screenshots sit directly in `powerbi/` | Structure documented as it exists |
 | 9 | `campaign_name` distinct count | — | 51 distinct names in the SQL run vs 48 in pandas, because 5 duplicated campaign ids differ by a "(v2)" suffix and the SQL tie-break is arbitrary | "roughly 48–51" |
 
 ## 3. Analytical limitations

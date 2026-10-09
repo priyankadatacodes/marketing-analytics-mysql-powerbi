@@ -1,6 +1,6 @@
 # Power BI Fix Guide — ratio measures and totals
 
-**Status: guidance, not completed work.** The `.pbix` is not in the repository, so the dashboard could not be edited or re-exported. This guide documents the problem, the measures that fix it, and a checklist to prove the fix, so the pages can be rebuilt and the screenshots replaced.
+**Status: partly applied.** The report layout in `powerbi/marketing_analytics.pbix` has been corrected (see [powerbi_model.md](powerbi_model.md) §4: Total rows hidden, one row per campaign on page 3, Overall ROI card). New DAX measures could not be added outside Power BI Desktop, so the measures below are still to be created if true ratio-of-sums totals are wanted in the tables. Screenshots still need re-exporting.
 
 ## The problem
 - **Pages 2 and 3:** the Total rows add up per-row ratio columns (CTR 22.87, lead rate 81.9, overall conversion 0.0107, ROAS 98.12, ROI −121.88, CAC ₹17.9M, LTV:CAC 32.99). These are sums of 7 channel ratios or of 220 campaign ratios. They reproduce exactly from the views (`SUM(roas)` over `vw_campaign_performance` = 98.14).
