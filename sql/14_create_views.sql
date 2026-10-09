@@ -299,6 +299,7 @@ DROP VIEW IF EXISTS vw_campaign_performance;
 
 CREATE VIEW vw_campaign_performance AS
 SELECT
+    dcamp.campaign_id,
     dcamp.campaign_name,
     dch.channel_name,
     COALESCE(sp.total_spend, 0) AS total_spend,
@@ -369,6 +370,45 @@ LEFT JOIN (
     GROUP BY tft.campaign_key
 ) ltv
     ON dcamp.campaign_key = ltv.campaign_key;
+
+
+-- ============================================================================
+-- VIEW: vw_kpi_summary
+-- One row of portfolio-level KPIs. Ratios are computed from summed numerators and
+-- denominators (ratio of sums). Never add up or average per-campaign / per-channel
+-- ROAS, ROI or CAC values: that produces meaningless totals (e.g. ROI = -121.86).
+--   ROAS = attributed revenue / spend
+--   ROI  = (attributed revenue - spend) / spend        (= ROAS - 1; revenue basis, not profit)
+-- The *_all_revenue variants include transactions that carry no campaign_id.
+-- ============================================================================
+
+DROP VIEW IF EXISTS vw_kpi_summary;
+
+CREATE VIEW vw_kpi_summary AS
+SELECT
+    sp.total_spend,
+    rev.attributed_revenue,
+    rev.total_revenue,
+    cust.customers_acquired,
+    ROUND(sp.total_spend / NULLIF(cust.customers_acquired, 0), 2)               AS cac,
+    ROUND(rev.attributed_revenue / NULLIF(sp.total_spend, 0), 4)                AS roas,
+    ROUND((rev.attributed_revenue - sp.total_spend) / NULLIF(sp.total_spend, 0), 4) AS roi,
+    ROUND(rev.total_revenue / NULLIF(sp.total_spend, 0), 4)                     AS roas_all_revenue,
+    ROUND((rev.total_revenue - sp.total_spend) / NULLIF(sp.total_spend, 0), 4)  AS roi_all_revenue
+FROM (
+    SELECT SUM(spend) AS total_spend
+    FROM fact_marketing_spend
+) sp
+CROSS JOIN (
+    SELECT
+        SUM(CASE WHEN campaign_key IS NOT NULL THEN revenue END) AS attributed_revenue,
+        SUM(revenue)                                             AS total_revenue
+    FROM fact_customer_revenue
+) rev
+CROSS JOIN (
+    SELECT COUNT(*) AS customers_acquired
+    FROM tbl_customer_first_touch
+) cust;
 
 
 -- ============================================================================
@@ -687,6 +727,10 @@ FROM vw_channel_performance
 UNION ALL
 SELECT 'vw_campaign_performance', COUNT(*)
 FROM vw_campaign_performance
+
+UNION ALL
+SELECT 'vw_kpi_summary', COUNT(*)
+FROM vw_kpi_summary
 
 UNION ALL
 SELECT 'vw_funnel_performance', COUNT(*)

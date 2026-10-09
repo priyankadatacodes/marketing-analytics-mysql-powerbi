@@ -1,6 +1,10 @@
 -- ============================================================================
 -- 01_raw_staging_setup.sql
 -- ============================================================================
+-- NOTE (portability): the LOAD DATA INFILE paths below point to a Windows MySQL
+-- uploads folder. To reproduce, replace 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads'
+-- with the absolute path of this repository's data_raw/ folder (the MySQL server must be
+-- allowed to read it: see the secure_file_priv setting). See README -> How to Run.
 
 CREATE DATABASE IF NOT EXISTS marketing_analytics;
 USE marketing_analytics;
